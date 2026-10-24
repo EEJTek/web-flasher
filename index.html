@@ -1,3 +1,41 @@
+<style>
+  html, body {
+    min-height: 100%;
+    margin: 0;
+  }
+  body {
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+  }
+  .card {
+    width: min(100%, 560px);
+    box-sizing: border-box;
+    margin: auto;
+  }
+  #languageBtn {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+  }
+  #log {
+    max-height: 240px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (max-width: 600px) {
+    body { justify-content: flex-start; padding: 16px 12px; }
+    .card { width: 100%; }
+  }
+</style>
+
 <button id="languageBtn" class="language-btn" type="button">English</button>
 
 <div class="card">
@@ -127,7 +165,19 @@
   });
 
   function log(message) {
-    logDiv.innerText += "\n" + message;
+    const now = new Date();
+    const timestamp = [
+      now.getFullYear(),
+      String(now.getMonth() + 1).padStart(2, "0"),
+      String(now.getDate()).padStart(2, "0"),
+    ].join("-") + " " + [
+      String(now.getHours()).padStart(2, "0"),
+      String(now.getMinutes()).padStart(2, "0"),
+      String(now.getSeconds()).padStart(2, "0"),
+    ].join(":");
+    const windowLabel = window.name || document.title || "主窗口";
+    logDiv.innerText += (logDiv.innerText ? "\n" : "") +
+      `[${timestamp}] [窗口: ${windowLabel}] ${message}`;
 
     logDiv.scrollTop = logDiv.scrollHeight;
   }
