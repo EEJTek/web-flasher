@@ -159,8 +159,9 @@ const dictionary = {
 
     footer: "© 2026 - AKAL Plays ESP Web Flasher",
 
-    languageButton: "Indonesia: ID",
+    languageButton: "中文：ZH",
   },
+  
   zh: {
     pageTitle: "AKAL Plays ESP 网页刷写工具",
 
@@ -240,7 +241,7 @@ const dictionary = {
 
     footer: "© 2026 - AKAL Plays ESP 网页刷写工具",
 
-    languageButton: "中文：ZH",
+    languageButton: "Indonesia: ID",
   },
 };
 
