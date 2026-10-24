@@ -1,85 +1,4 @@
 const dictionary = {
-  id: {
-    pageTitle: "AKAL Plays ESP Web Flasher",
-
-    subtitle: `
-            Flash firmware ESP32-S2 dan ESP8266 langsung melalui browser.
-            <br>
-            Pastikan firmware yang dipilih sesuai dengan PS4 kalian.
-        `,
-
-    preparationTitle: "Persiapan:",
-
-    preparation: `
-            1. Hubungkan board melalui USB.<br>
-            2. Khusus ESP32 S2 perlu masuk ke flash mode dulu dengan tekan tombol BOOT dan Reset bersamaan lalu lepas.<br>
-            3. Tekan tombol Connect & Flash.<br>
-            4. Pilih port serial board Anda.
-        `,
-
-    firmwareTitle: "Pilih Versi Firmware:",
-
-    firmwareV1: "7.00 - 13.00 (GH)",
-    firmwareV2: "13.02 - 13.52 (RG)",
-    firmwareV3: "7.00 - 13.52 (GH)",
-
-    webkitInfo: "Webkit: RG = RawGame, GH = GamerHack",
-
-    connectFlash: "Connect & Flash",
-
-    ready: "Siap. Hubungkan ESP dan mulai flashing...",
-
-    connecting: "Connecting...",
-    erasing: "Erasing...",
-
-    flashing: "Memulai flashing firmware... Mohon jangan mencabut kabel USB.",
-    doNotDisconnect: "Jangan pindah tab atau jendela agar proses flashing tidak terganggu.",
-
-    eraseMessage: "Menghapus seluruh isi flash...",
-
-    success: "[BERHASIL] Flashing selesai!",
-
-    resetMessage:
-      "Tekan tombol Reset pada ESP, hubungkan PS4 ke wifi Webkit PS4 (pass: 12345678). lalu buka 10.1.1.1 di browser atau menu User Guide untuk menggunakan WebKit.",
-
-    settingMessage:
-      "Buka 10.1.1.1/setting untuk mengganti nama dan password WiFi, memperbarui GoldHEN, serta mengubah background.",
-
-    registrationMessage:
-      "Untuk registrasi awal kirimkan ID Chip yang tampil di halaman regis atau di bawah ke https://t.me/yayatpy",
-
-    selectFirmwareError: "Pilih versi firmware dulu!",
-
-    browserError:
-      "[ERROR] Browser tidak mendukung Web Serial API!\n" +
-      "Gunakan Google Chrome atau Microsoft Edge di komputer.",
-
-    unsupportedChip:
-      "Chip tidak didukung. Hanya ESP8266 dan ESP32-S2 yang didukung.\n" +
-      "Chip terdeteksi: ",
-
-    firmwareNotFound: "Firmware tidak ditemukan: ",
-
-    firmwareEmpty: "File firmware kosong.",
-
-    firmwareVersionError: "Versi firmware tidak tersedia untuk chip ini.",
-
-    detectedChip: "Chip terdeteksi: ",
-
-    selectedFirmware: "Firmware yang dipilih: ",
-
-    errorText: "Error",
-    chipIdLabel: "Chip ID: ",
-
-    chipIdError: "[ERROR] Gagal membaca Chip ID: ",
-
-    logReady: "Siap. Hubungkan ESP dan mulai flashing... ",
-
-    footer: "© 2026 - AKAL Plays ESP Web Flasher",
-
-    languageButton: "English: EN",
-  },
-
   en: {
     pageTitle: "AKAL Plays ESP Web Flasher",
 
@@ -241,7 +160,7 @@ const dictionary = {
 
     footer: "© 2026 - AKAL Plays ESP 网页刷写工具",
 
-    languageButton: "Indonesia: ID",
+    languageButton: "English: EN",
   },
 };
 

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0b1020">
   <link rel="stylesheet" href="./style.css">
-  <title>AKAL Plays ESP Web Flasher</title>
+  <title>JTek ESP Web Flasher</title>
 </head>
 <body>
 <button id="languageBtn" class="language-btn" type="button">English</button>
@@ -71,7 +71,7 @@
   <div id="log" class="log-panel" data-i18n="logReady"></div>
 
   <div class="footer" data-i18n="footer">
-    © 2026 - AKAL Plays ESP Web Flasher
+    © 2026 - JTek ESP Web Flasher
   </div>
 </div>
 
@@ -102,9 +102,9 @@
   let esploader = null;
 
   const savedLanguage = localStorage.getItem("akalLanguage");
-  let currentLanguage = ["id", "en", "zh"].includes(savedLanguage)
+  let currentLanguage = ["en", "zh"].includes(savedLanguage)
     ? savedLanguage
-    : "id";
+    : "en";
 
   function t(key) {
     return dictionary[currentLanguage][key] ?? key;
@@ -127,7 +127,7 @@
   }
 
   languageBtn.addEventListener("click", () => {
-    const languageOrder = ["id", "en", "zh"];
+    const languageOrder = ["en", "zh"];
     const currentIndex = languageOrder.indexOf(currentLanguage);
     currentLanguage = languageOrder[(currentIndex + 1) % languageOrder.length];
 
