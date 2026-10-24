@@ -11,7 +11,7 @@
 <button id="languageBtn" class="language-btn" type="button">English</button>
 
 <div class="card">
-  <h2 data-i18n="pageTitle">AKAL Plays ESP Web Flasher</h2>
+  <h2 data-i18n="pageTitle">JTek ESP Web Flasher</h2>
 
   <div class="subtitle" data-i18n="subtitle">
     Flash firmware ESP32-S2 dan ESP8266 langsung melalui browser.
@@ -149,7 +149,7 @@
     ].join(":");
     const windowLabel = window.name || document.title || "主窗口";
     logDiv.innerText += (logDiv.innerText ? "\n" : "") +
-      `[${timestamp}] [窗口: ${windowLabel}] ${message}`;
+      `[${timestamp}] ${message}`;
 
     logDiv.scrollTop = logDiv.scrollHeight;
   }
@@ -318,29 +318,6 @@
     return selectedOption ? selectedOption.value : null;
   }
 
-  /*
-   * =========================================================
-   * V3 - CHIP ID
-   * =========================================================
-   *
-   * ESP8266:
-   * Membaca Chip ID 32-bit langsung dari eFuse.
-   *
-   * ESP32-S2:
-   * ESP32-S2 tidak mempunyai chip-id command seperti ESP8266.
-   * Untuk kebutuhan ID registrasi 8 digit, digunakan 4 byte
-   * terakhir dari MAC hardware.
-   *
-   * Hasil akhir selalu:
-   *
-   *     5A3C9F12
-   *
-   * tanpa 0x
-   * tanpa :
-   * uppercase
-   * panjang 8 karakter
-   */
-
   async function readESP8266ChipId() {
     /*
      * Register eFuse ESP8266
@@ -391,19 +368,6 @@
 
     macHex = macHex.slice(-12);
 
-    // =========================================================
-    // PENTING:
-    // ESP.getEfuseMac() pada Arduino ESP32 menggunakan
-    // representasi little-endian.
-    //
-    // MAC 84:F7:03:D8:04:06
-    //
-    // menjadi:
-    // 0x00000604D803F784
-    //
-    // Jadi byte MAC pertama harus menjadi byte paling rendah.
-    // =========================================================
-
     const bytes = macHex.match(/.{2}/g);
 
     if (!bytes || bytes.length !== 6) {
@@ -440,37 +404,9 @@
   async function readChipId(chipName) {
     const chip = String(chipName || "").toLowerCase();
 
-    // =========================================================
-    // ESP32-S2
-    //
-    // Tetap menggunakan algoritma ESP.getEfuseMac()
-    // dari sketch ESP32-S2 Anda.
-    // =========================================================
-
     if (chip.includes("esp32-s2") || chip.includes("esp32s2")) {
       return await readESP32S2ChipId();
     }
-
-    // =========================================================
-    // ESP8266
-    //
-    // Sketch:
-    //
-    // ESP.getChipId()
-    //
-    // system_get_chip_id()
-    //
-    // Chip ID = 3 byte terakhir MAC
-    // byte paling atas = 00
-    //
-    // Contoh:
-    //
-    // MAC:
-    // AA:BB:CC:DD:EE:FF
-    //
-    // Chip ID:
-    // 00DDEEFF
-    // =========================================================
 
     if (chip.includes("esp8266")) {
       if (!esploader) {
@@ -749,10 +685,6 @@
       setUIBusy(false);
     }
   });
-
-  /*
-   * Jalankan bahasa UI.
-   */
   translatePage();
 </script>
 </body>

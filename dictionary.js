@@ -1,6 +1,6 @@
 const dictionary = {
   en: {
-    pageTitle: "AKAL Plays ESP Web Flasher",
+    pageTitle: "JTek ESP Web Flasher",
 
     subtitle: `
             Flash ESP32-S2 and ESP8266 firmware directly through your browser.
@@ -76,18 +76,18 @@ const dictionary = {
 
     logReady: "Ready. Connect the ESP and start flashing... ",
 
-    footer: "© 2026 - AKAL Plays ESP Web Flasher",
+    footer: "© 2026 - JTek Ltd",
 
-    languageButton: "中文：ZH",
+    languageButton: "Chinese: ZH",
   },
   
   zh: {
-    pageTitle: "AKAL Plays ESP 网页刷写工具",
+    pageTitle: "JTek ESP 网页烧录工具",
 
     subtitle: `
             通过浏览器直接刷写 ESP32-S2 和 ESP8266 固件。
             <br>
-            请确保所选固件与您的 PS4 兼容。
+            请确保所选固件与您的 PS4 版本兼容。
         `,
 
     preparationTitle: "准备工作：",
@@ -158,7 +158,7 @@ const dictionary = {
 
     logReady: "准备就绪。请连接 ESP 并开始刷写…… ",
 
-    footer: "© 2026 - AKAL Plays ESP 网页刷写工具",
+    footer: "© 2026 - JTek Ltd",
 
     languageButton: "English: EN",
   },
